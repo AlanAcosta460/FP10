@@ -1,0 +1,24 @@
+#include <stdio.h> 
+#include <math.h>
+
+int main()
+{
+  int i,n;
+  float x;
+  double tot,fac=1;
+  
+
+  printf("Ingrese un número:\n");
+  scanf("%f",&x);
+
+  for (i=2;i<=101;i++)
+    {
+      fac=fac*i;
+      tot=tot+(pow(x,i)/(fac));
+    }
+  
+tot=1+x+tot;
+
+printf("La suma de cada uno de los valores de 1 a 100 es: %f\n",tot);
+
+}
