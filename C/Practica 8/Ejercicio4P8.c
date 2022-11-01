@@ -3,10 +3,10 @@
 
 int main()
 {
-  int i,n;
+  int i;
   float x;
   double tot,fac=1;
-
+  
   printf("Ingrese un número:\n");
   scanf("%f",&x);
 
