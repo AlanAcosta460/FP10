@@ -6,7 +6,6 @@ int main()
   int i,n;
   float x;
   double tot,fac=1;
-  
 
   printf("Ingrese un número:\n");
   scanf("%f",&x);
