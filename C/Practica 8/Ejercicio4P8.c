@@ -19,6 +19,6 @@ int main()
   
 tot=1+x+tot;
 
-printf("La suma de cada uno de los valores de 1 a 100 es: %f\n",tot);
+printf("La suma de cada uno de los valores de 1 a 100 es: %.10f\n",tot);
 
 }
