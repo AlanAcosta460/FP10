@@ -29,9 +29,11 @@ scanf("%s",DI);
 
 if (strcmp(DI, "domingo") == 0)
         IMP = PAG * 0.03;
-    else if (strcmp(TU, "matutino") == 0)
+    else 
+      if (strcmp(TU, "matutino") == 0)
         IMP = PAG * 0.15;
-    else if (strcmp(TU, "vespertino") == 0)
+    else 
+      if (strcmp(TU, "vespertino") == 0)
         IMP = PAG * 0.1;
     else
         IMP = 0;
