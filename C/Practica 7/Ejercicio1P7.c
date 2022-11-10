@@ -1,3 +1,10 @@
+/*
+Los datos de entrada son el día y el mes que ingresa el usuario. 
+A partir del mes el programa elige un caso del 1 al 12 y da como
+salida el nombre de la estación del año (en el caso 3, 6, 9 y 12 
+se toma en cuenta el día para determinar la estación).
+*/
+
 #include <stdio.h>
 
 int main()
@@ -77,5 +84,5 @@ int main()
         }
     }
     else 
-    printf("Datos no validos\n");
+    printf("Datos no válidos\n");
 }
