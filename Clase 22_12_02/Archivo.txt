@@ -1,0 +1,1 @@
+Se tiene que crear un archivo llamado Archivo.txt para que no se cumpla el primero condicional del ejercicio 1 y se ejecute else
