@@ -26,22 +26,22 @@ void apuntador(int *ap1, int *ap2, int vec1[], int vec2[], int dim)
     printf("Vector1\n");
     for (i = 0; i < dim; i++)
     {
-        //se le asigna las direcciones del vector 2 al apuntador 1
+        //se le asignan las direcciones del vector 2 al apuntador 1
         ap1 = &vec2[i];
-        //se le asigna los valores del vector 2 al apuntador 1
+        //se le asignan los valores del vector 2 al apuntador 1
         *ap1 = vec2[i];
-        //se imprimen los valores contenidos en *ap1 que son los mimso que los del vector 2
+        //se imprimen los valores contenidos en *ap1 que son los mismos valores que los del vector 2
         printf("%d\n", *ap1);
     }
     
     printf("\nVector2\n");
     for (i = 0; i < dim; i++)
     {
-        //se le asigna las direcciones del vector 1 al apuntador 2
+        //se le asignan las direcciones del vector 1 al apuntador 2
         ap2 = &vec1[i];
-        //se le asigna los valores del vector 1 al apuntador 2
+        //se le asignan los valores del vector 1 al apuntador 2
         *ap2 = vec1[i];
-        //se imprimen los valores contenidos en *ap2 que son los mimso que los del vector 1
+        //se imprimen los valores contenidos en *ap2 que son los mismos valores que los del vector 1
         printf("%d\n", *ap2);
     }
 }
