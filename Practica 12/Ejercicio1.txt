@@ -1,0 +1,9 @@
+Direccion y contenido del primer numero
+0061FEDC	 24
+
+Direccion y contenido del segundo numero
+0061FED8	 36
+
+Direccion y contenido de la suma
+0061FED4	 60
+
