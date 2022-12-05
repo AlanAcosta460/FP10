@@ -10,7 +10,7 @@ int menu()
     printf("1) Ejercicio 1\n");
     printf("2) Ejercicio 2\n");
     printf("3) Ejercicio 3\n");
-    printf("3) Ejercicio 4\n");
+    printf("4) Ejercicio 4\n");
     printf("\nSeleccione una opcion:\n");
     scanf("%d", &o);
     printf("\n");
