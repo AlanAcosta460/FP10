@@ -6,8 +6,7 @@ int main()
 {
    FILE *archivo;
    char frase[100];
-
-   archivo = fopen("resgistroDeUsuario.txt", "w");
+   archivo = fopen("registroDeUsuario.txt", "w");
    if (archivo == NULL)
    {
        printf("Error al abrir el archivo");
