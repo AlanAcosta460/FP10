@@ -18,5 +18,4 @@ int main()
     fclose(archivo);
     
     return 0;
-
 }
