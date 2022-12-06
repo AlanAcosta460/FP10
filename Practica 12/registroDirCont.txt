@@ -1,0 +1,9 @@
+Direccion y contenido del primer numero
+0061FF0C	 24
+
+Direccion y contenido del segundo numero
+0061FF08	 36
+
+Direccion y contenido de la suma
+0061FF04	 60
+
