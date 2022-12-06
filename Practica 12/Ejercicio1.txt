@@ -1,9 +1,0 @@
-Direccion y contenido del primer numero
-0061FEDC	 35
-
-Direccion y contenido del segundo numero
-0061FED8	 28
-
-Direccion y contenido de la suma
-0061FED4	 63
-

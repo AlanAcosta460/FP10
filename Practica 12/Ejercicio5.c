@@ -53,7 +53,7 @@ void ejercicio1()
     ap_n2 = &n2;
     ap_r = &r;
 
-    apFile = fopen("Ejercicio1.txt", "w");
+    apFile = fopen("registroDirCont.txt", "w");
     
     fputs(mensaje1, apFile);
     fprintf(apFile, "%p\t %d\n\n", ap_n1, n1);
@@ -67,75 +67,84 @@ void ejercicio1()
 
 void ejercicio2()
 {
-   FILE *archivo;
-   char frase[100];
-   archivo = fopen("registroDeUsuario.txt", "w");
-   if (archivo == NULL)
-   {
-       printf("Error al abrir el archivo");
-       exit(1);
-   }
-   printf("Escribe una frase: ");
-   gets(frase);
-   while (strcmp(frase, "fin") != 0)
-   {
-       fprintf(archivo, "%s\n", frase);
-       printf("Escribe una frase: ");
-       gets(frase);
-   }
-   fclose(archivo);
+    FILE *archivo;
+    char frase[100], fin[] = "fin";
+    archivo = fopen("registroDeUsuario.txt", "w");
+    if (archivo == NULL)
+    {
+        printf("Error al abrir el archivo");
+        exit(1);
+    }
+    printf("Escribe una frase: ");
+    scanf("%s", frase);
+
+    ciclo:
+    if (strcmp(frase, fin) == 0)
+    {
+        fclose(archivo);
+    }
+    else
+    {
+        fprintf(archivo, "%s\n", frase);
+        printf("Escribe una frase: ");
+        scanf("%s", frase);
+        goto ciclo;
+    }
 }
 
 void ejercicio3()
 {
-    char nombre[100], posicion[100], estado[100];
     FILE *archivo;
-    int op, opr;
+    char nombre[100] = "", posicion[100] = "", estado[100] = "", repetir[1];
+    int op;
+
+    rep:
     archivo = fopen("jugadores.txt", "a");
     if (archivo == NULL)
     {
         printf("Error al abrir el archivo");
         exit(1);
     }
-    
-    menu:
+
     printf("Escribe el nombre del jugador -> ");
     scanf("%s", nombre);
-    printf("\nEscribe la posicion del jugador -> ");
+    printf("Escribe la posicion del jugador -> ");
     scanf("%s", posicion);
 
-    printf("\nSelecciona el estado de salud del jugador\n");
-    printf("1. Excelente \n2. Buena \n3. Regular \n4. Pesima\n ");
-
-    scanf("%d", &op);
+    printf("1. Excelente \n2. Buena \n3. Regular \n4. Pesima \n");
+    printf("Selecciona el estado de salud del jugador -> ");
+    scanf("%i", &op);
     switch (op)
     {
-        case 1:
-            strcpy(estado, "Excelente");
-            break;
-        case 2:
-            strcpy(estado, "Buena");
-            break;
-        case 3:
-            strcpy(estado, "Regular");
-            break;
-        case 4:
-            strcpy(estado, "Pesima");
-            break;
-        default:
-            printf("Opcion no valida");
-            break;
+    case 1:
+        strcpy(estado, "Excelente");
+        break;
+    case 2:
+        strcpy(estado, "Buena");
+        break;
+    case 3:
+        strcpy(estado, "Regular");
+        break;
+    case 4:
+        strcpy(estado, "Pesima");
+        break;
+    default:
+        printf("Opcion no valida");
+        break;
     }
-    fprintf(archivo, "%s \t\t%s \t\t%s", nombre, posicion, estado);
+    fprintf(archivo, "%s %s %s\n", nombre, posicion, estado);
     fclose(archivo);
 
-    printf("\nDesea insertar otro jugador? \n1. Si \n2. No\n");
-    scanf("%d", &opr);
-    if (opr == 1)
-        goto menu;
+    printf("Desea insertar otro jugador? (s/n) -> ");
+    scanf("%s", repetir);
+
+    if (strcmp(repetir, "s") == 0)
+    {
+        goto rep;
+    }
     else
     {
-        printf("\nGracias por usar el programa :)\n");
+        printf("Gracias por usar el programa :)");
     }
 }
 
