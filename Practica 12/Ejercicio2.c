@@ -21,4 +21,5 @@ int main()
         fprintf(archivo, "%s\n", frase);
         goto inicio;
     }
+
 }
