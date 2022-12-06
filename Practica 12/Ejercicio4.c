@@ -16,4 +16,6 @@ int main()
         printf("%c", caracter);
     }
     fclose(archivo);
+
+    return 0;
 }

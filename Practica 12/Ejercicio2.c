@@ -8,18 +8,15 @@ int main()
     archivo = fopen("registroDeUsuario.txt", "w+");
 
     printf("Ingrese frases a continuacion:\n");
-    inicio:
     gets(frase);
 
-    if(strcmp(frase, fin) == 0)
-    {
-        fclose(archivo);
-        return 0;
-    }
-    else
+    while(strcmp(frase, fin) != 0)
     {
         fprintf(archivo, "%s\n", frase);
-        goto inicio;
+        gets(frase);
     }
+    fclose(archivo);
+    
+    return 0;
 
 }

@@ -1,9 +1,8 @@
 Direccion y contenido del primer numero
-0061FEDC	 24
+ 0061FEDC 	27
 
 Direccion y contenido del segundo numero
-0061FED8	 21
+ 0061FED8	 41
 
-Direccion y contenido de la suma
-0061FED4	 45
-
+Direccion y contenido del resultado
+ 0061FED4	 68
