@@ -74,7 +74,6 @@ int ejercicio2()
     printf("Ingrese frases a continuacion:\n");
     inicio:
     gets(frase);
-    
     if(strcmp(frase, fin) == 0)
     {
         fclose(archivo);
