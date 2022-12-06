@@ -1,26 +1,24 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
  
 int main()
 {
-   FILE *archivo;
-   char frase[100];
+    FILE *archivo;
+    char frase[100], fin[] = "fin ";
+    archivo = fopen("registroDeUsuario.txt", "w+");
 
-   archivo = fopen("resgistroDeUsuario.txt", "w");
-   if (archivo == NULL)
-   {
-       printf("Error al abrir el archivo");
-       exit(1);
-   }
-   printf("Escribe una frase: ");
-   gets(frase);
-   while (strcmp(frase, "fin") != 0)
-   {
-       fprintf(archivo, "%s\n", frase);
-       printf("Escribe una frase: ");
-       gets(frase);
-   }
-   fclose(archivo);
-   return 0;
+    inicio:
+    printf("Escriba una frase:\n");
+    gets(frase);
+
+    if(strcmp(frase, fin) == 0)
+    {
+        fclose(archivo);
+        return 0;
+    }
+    else
+    {
+        fprintf(archivo, "%s\n", frase);
+        goto inicio;
+    }
 }
