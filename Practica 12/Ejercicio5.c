@@ -71,10 +71,10 @@ int ejercicio2()
     char frase[100], fin[] = "fin ";
     archivo = fopen("registroDeUsuario.txt", "w+");
 
+    printf("Ingrese frases a continuacion:\n");
     inicio:
-    printf("Escriba una frase:\n");
     gets(frase);
-
+    
     if(strcmp(frase, fin) == 0)
     {
         fclose(archivo);
