@@ -4,55 +4,57 @@
 
 int main()
 {
-    char nombre[100], posicion[100], estado[100];
     FILE *archivo;
-    int op, opr;
+    char nombre[100] = "", posicion[100] = "", estado[100] = "", repetir[1];
+    int op;
+
+    rep:
     archivo = fopen("jugadores.txt", "a");
     if (archivo == NULL)
     {
         printf("Error al abrir el archivo");
         exit(1);
     }
-    
-    menu:
+
     printf("Escribe el nombre del jugador -> ");
     scanf("%s", nombre);
-    printf("\nEscribe la posicion del jugador -> ");
+    printf("Escribe la posicion del jugador -> ");
     scanf("%s", posicion);
 
-    printf("\nSelecciona el estado de salud del jugador\n");
-    printf("1. Excelente \n2. Buena \n3. Regular \n4. Pesima\n ");
-
-    scanf("%d", &op);
+    printf("1. Excelente \n2. Buena \n3. Regular \n4. Pesima \n");
+    printf("Selecciona el estado de salud del jugador -> ");
+    scanf("%i", &op);
     switch (op)
     {
-        case 1:
-            strcpy(estado, "Excelente");
-            break;
-        case 2:
-            strcpy(estado, "Buena");
-            break;
-        case 3:
-            strcpy(estado, "Regular");
-            break;
-        case 4:
-            strcpy(estado, "Pesima");
-            break;
-        default:
-            printf("Opcion no valida");
-            break;
+    case 1:
+        strcpy(estado, "Excelente");
+        break;
+    case 2:
+        strcpy(estado, "Buena");
+        break;
+    case 3:
+        strcpy(estado, "Regular");
+        break;
+    case 4:
+        strcpy(estado, "Pesima");
+        break;
+    default:
+        printf("Opcion no valida");
+        break;
     }
-    fprintf(archivo, "%s \t\t%s \t\t%s", nombre, posicion, estado);
+    fprintf(archivo, "%s %s %s\n", nombre, posicion, estado);
     fclose(archivo);
 
-    printf("\nDesea insertar otro jugador? \n1. Si \n2. No\n");
-    scanf("%d", &opr);
-    if (opr == 1)
-        goto menu;
+    printf("Desea insertar otro jugador? (s/n) -> ");
+    scanf("%s", repetir);
+
+    if (strcmp(repetir, "s") == 0)
+    {
+        goto rep;
+    }
     else
     {
-        printf("\nGracias por usar el programa :)\n");
+        printf("Gracias por usar el programa :)");
     }
-
     return 0;
 }
