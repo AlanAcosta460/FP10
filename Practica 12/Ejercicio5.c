@@ -130,7 +130,7 @@ void ejercicio3()
     fprintf(archivo, "%s %s %s\n", nombre, posicion, estado);
     fclose(archivo);
 
-    printf("Desea insertar otro jugador? (s/n) -> ");
+    printf("\nDesea insertar otro jugador? (s/n) -> ");
     scanf("%s", repetir);
 
     if (strcmp(repetir, "s") == 0)
@@ -139,25 +139,25 @@ void ejercicio3()
     }
     else
     {
-        printf("Gracias por usar el programa :)");
+        printf("\nGracias por usar el programa :)");
     }
 }
 
 void ejercicio4()
 {
     FILE *archivo;
-   char caracter;
-   archivo = fopen("plan.txt", "r");
-   if (archivo == NULL)
-   {
-       printf("Error al abrir el archivo");
-       exit(1);
-   }
-   while ((caracter = fgetc(archivo)) != EOF)
-   {
-       printf("%c", caracter);
-   }
-   fclose(archivo);
+    char caracter;
+    archivo = fopen("plan.txt", "r");
+    if (archivo == NULL)
+    {
+        printf("Error al abrir el archivo");
+        exit(1);
+    }
+    while ((caracter = fgetc(archivo)) != EOF)
+    {
+        printf("%c", caracter);
+    }
+    fclose(archivo);
 }
 
 int main()

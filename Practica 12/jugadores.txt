@@ -1,6 +1,1 @@
 Samuel Delantero Excelente
-Samy Defensa Regular
-<<<<<<< HEAD
-Samuel Delantero Buena
-=======
->>>>>>> fc637e615f5c6fc7b585b55708dbfb01ac8719fb

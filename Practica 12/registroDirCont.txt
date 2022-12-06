@@ -1,9 +1,9 @@
 Direccion y contenido del primer numero
-0061FF0C	 24
+0061FEDC	 24
 
 Direccion y contenido del segundo numero
-0061FF08	 36
+0061FED8	 21
 
 Direccion y contenido de la suma
-0061FF04	 60
+0061FED4	 45
 

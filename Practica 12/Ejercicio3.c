@@ -45,7 +45,7 @@ int main()
     fprintf(archivo, "%s %s %s\n", nombre, posicion, estado);
     fclose(archivo);
 
-    printf("Desea insertar otro jugador? (s/n) -> ");
+    printf("\nDesea insertar otro jugador? (s/n) -> ");
     scanf("%s", repetir);
 
     if (strcmp(repetir, "s") == 0)
@@ -54,7 +54,7 @@ int main()
     }
     else
     {
-        printf("Gracias por usar el programa :)");
+        printf("\nGracias por usar el programa :)");
     }
     return 0;
 }
