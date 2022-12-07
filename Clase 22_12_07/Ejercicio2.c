@@ -49,6 +49,6 @@ int main()
         fprintf(apFile, "\nNombre: %s \nAperllido: %s \nCarrera: %s \nNo de cuenta: %s \nEdad: %d \nEstatura: %.2f m \nPeso: %.2f kg\n\n", estudiante[i].nombre, estudiante[i].apellido, estudiante[i].carrera, estudiante[i].noDeCuenta, estudiante[i].edad, estudiante[i].estatura, estudiante[i].peso);
     }
 
-    fclose(apFile);
+    fclose(apFile); 
     return 0;
 }

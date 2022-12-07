@@ -3,7 +3,7 @@ Nombre: Alan Omar
 Aperllido: Acosta Porcayo  
 Carrera: Ing en Computacion  
 No de cuenta: 320206102 
-Edad: 18 
+Edad: 18  
 Estatura: 1.69 m 
 Peso: 64.50 kg
 
