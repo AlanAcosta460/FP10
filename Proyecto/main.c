@@ -27,150 +27,130 @@ int pedirOpcion(int);
 
 int main()
 {
+    int opcion;
+    
     inicio:
-    switch (menuPrincipal())
+    opcion = menuPrincipal();
+
+    seleccion:
+    switch (opcion)
     {
         case 1:
-            sumaVec:
             sumaVec();
             switch (menuRetorno())
             {
-                case 1: goto sumaVec; break;
+                case 1: goto seleccion; break;
                 case 2: goto inicio; break;
-                case 3: goto despedida; 
-                default: break;
+                default: goto despedida; break;
             }
             break;
         case 2:
-            restaVect:
             restaVect();
             switch (menuRetorno())
             {
-                case 1: goto restaVect; break;
+                case 1: goto seleccion; break;
                 case 2: goto inicio; break;
-                case 3: goto despedida; 
-                default: break;
+                default: goto despedida; break;
             }
             break;
         case 3:
-            vecPorEscalar:
             vecPorEscalar();
             switch (menuRetorno())
             {
-                case 1: goto vecPorEscalar; break;
+                case 1: goto seleccion; break;
                 case 2: goto inicio; break;
-                case 3: goto despedida; 
-                default: break;
+                default: goto despedida; break;
             }
             break;
         case 4:
-            proEscalar:
             proEscalar();
             switch (menuRetorno())
             {
-                case 1: goto proEscalar; break;
+                case 1: goto seleccion; break;
                 case 2: goto inicio; break;
-                case 3: goto despedida; 
-                default: break;
+                default: goto despedida; break;
             }
             break;
         case 5:
-            proVectorial:
             proVectorial();
             switch (menuRetorno())
             {
-                case 1: goto proVectorial; break;
+                case 1: goto seleccion; break;
                 case 2: goto inicio; break;
-                case 3: goto despedida; 
-                default: break;
+                default: goto despedida; break;
             }
             break;
         case 6:
-            proMixto:
             proMixto();
             switch (menuRetorno())
             {
-                case 1: goto proMixto; break;
+                case 1: goto seleccion; break;
                 case 2: goto inicio; break;
                 case 3: goto despedida;
-                default: break;
+                default: goto despedida; break;
             }
             break;
         case 7:
-            sumaMat:
             sumaMat();
             switch (menuRetorno())
             {
-                case 1: goto sumaMat; break;
+                case 1: goto seleccion; break;
                 case 2: goto inicio; break;
-                case 3: goto despedida; 
-                default: break;
+                default: goto despedida; break;
             }
             break;
         case 8:
-            restaMat:
             restaMat();
             switch (menuRetorno())
             {
-                case 1: goto restaMat; break;
+                case 1: goto seleccion; break;
                 case 2: goto inicio; break;
-                case 3: goto despedida; 
-                default: break;
+                default: goto despedida; break;
             }
             break;
         case 9:
-            matPorEscalar:
             matPorEscalar();
             switch (menuRetorno())
             {
-                case 1: goto matPorEscalar; break;
+                case 1: goto seleccion; break;
                 case 2: goto inicio; break;
-                case 3: goto despedida; 
-                default: break;
+                default: goto despedida; break;
             }
             break;
         case 10:
-            productoMat:
             productoMat();
             switch (menuRetorno())
             {
-                case 1: goto productoMat; break;
+                case 1: goto seleccion; break;
                 case 2: goto inicio; break;
-                case 3: goto despedida; 
-                default: break;
+                default: goto despedida; break;
             }
             break;
         case 11:
-            traza:
             traza();
             switch (menuRetorno())
             {
-                case 1: goto traza; break;
+                case 1: goto seleccion; break;
                 case 2: goto inicio; break;
-                case 3: goto despedida; 
-                default: break;
+                default: goto despedida; break;
             }
             break;
         case 12:
-            transpuesta:
             transpuesta();
             switch (menuRetorno())
             {
-                case 1: goto transpuesta; break;
+                case 1: goto seleccion; break;
                 case 2: goto inicio; break;
-                case 3: goto despedida; 
-                default: break;
+                default: goto despedida; break;
             }
             break;
         case 13:
-            inversa:
             inversa();
             switch (menuRetorno())
             {
-                case 1: goto inversa; break;
+                case 1: goto seleccion; break;
                 case 2: goto inicio; break;
-                case 3: goto despedida; 
-                default: break;
+                default: goto despedida; break;
             }
             break;
         default: break;
