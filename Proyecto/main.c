@@ -35,128 +35,28 @@ int main()
     seleccion:
     switch (opcion)
     {
-        case 1:
-            sumaVec();
-            switch (menuRetorno())
-            {
-                case 1: goto seleccion; break;
-                case 2: goto inicio; break;
-                default: goto despedida; break;
-            }
-            break;
-        case 2:
-            restaVect();
-            switch (menuRetorno())
-            {
-                case 1: goto seleccion; break;
-                case 2: goto inicio; break;
-                default: goto despedida; break;
-            }
-            break;
-        case 3:
-            vecPorEscalar();
-            switch (menuRetorno())
-            {
-                case 1: goto seleccion; break;
-                case 2: goto inicio; break;
-                default: goto despedida; break;
-            }
-            break;
-        case 4:
-            proEscalar();
-            switch (menuRetorno())
-            {
-                case 1: goto seleccion; break;
-                case 2: goto inicio; break;
-                default: goto despedida; break;
-            }
-            break;
-        case 5:
-            proVectorial();
-            switch (menuRetorno())
-            {
-                case 1: goto seleccion; break;
-                case 2: goto inicio; break;
-                default: goto despedida; break;
-            }
-            break;
-        case 6:
-            proMixto();
-            switch (menuRetorno())
-            {
-                case 1: goto seleccion; break;
-                case 2: goto inicio; break;
-                case 3: goto despedida;
-                default: goto despedida; break;
-            }
-            break;
-        case 7:
-            sumaMat();
-            switch (menuRetorno())
-            {
-                case 1: goto seleccion; break;
-                case 2: goto inicio; break;
-                default: goto despedida; break;
-            }
-            break;
-        case 8:
-            restaMat();
-            switch (menuRetorno())
-            {
-                case 1: goto seleccion; break;
-                case 2: goto inicio; break;
-                default: goto despedida; break;
-            }
-            break;
-        case 9:
-            matPorEscalar();
-            switch (menuRetorno())
-            {
-                case 1: goto seleccion; break;
-                case 2: goto inicio; break;
-                default: goto despedida; break;
-            }
-            break;
-        case 10:
-            productoMat();
-            switch (menuRetorno())
-            {
-                case 1: goto seleccion; break;
-                case 2: goto inicio; break;
-                default: goto despedida; break;
-            }
-            break;
-        case 11:
-            traza();
-            switch (menuRetorno())
-            {
-                case 1: goto seleccion; break;
-                case 2: goto inicio; break;
-                default: goto despedida; break;
-            }
-            break;
-        case 12:
-            transpuesta();
-            switch (menuRetorno())
-            {
-                case 1: goto seleccion; break;
-                case 2: goto inicio; break;
-                default: goto despedida; break;
-            }
-            break;
-        case 13:
-            inversa();
-            switch (menuRetorno())
-            {
-                case 1: goto seleccion; break;
-                case 2: goto inicio; break;
-                default: goto despedida; break;
-            }
-            break;
+        case 1: sumaVec();
+        case 2: restaVect();
+        case 3: vecPorEscalar();
+        case 4: proEscalar();
+        case 5: proVectorial();
+        case 6: proMixto();
+        case 7: sumaMat();
+        case 8: restaMat();
+        case 9: matPorEscalar();
+        case 10: productoMat();
+        case 11: traza();
+        case 12: transpuesta();
+        default: inversa(); break;
+    }
+
+    switch (menuRetorno())
+    {
+        case 1: goto seleccion; break;
+        case 2: goto inicio; break;
         default: break;
     }
 
-    despedida:
     printf("Gracias por usar el programa!!!\n\n");
     system("pause");
 
