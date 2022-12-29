@@ -116,12 +116,14 @@ int menuRetorno()
 
 int pedirOpcion(int opMax)
 {
+    char opChar[100];
     int op;
 
     do
     {
         printf(".:Seleccione una opcion:.\n");
-        printf("-> "); scanf("%d", &op);
+        printf("-> "); gets(opChar);
+        op = atoi(opChar); //Funcion que convierte una cadena en un numero entero
         if (op < 1 || op > opMax)
             printf("Opcion invalida\n");
         printf("\n");
