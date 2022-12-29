@@ -112,7 +112,7 @@ int menuRetorno()
     printf("3)  Salir\n\n");
 
     return pedirOpcion(3);
-} 
+}  
 
 int pedirOpcion(int opMax)
 {
