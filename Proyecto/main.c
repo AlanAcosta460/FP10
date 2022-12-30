@@ -349,9 +349,10 @@ int menuPrincipal()
     printf("11) Traza de una matriz\n");
     printf("12) Transpuesta de una matriz\n");
     printf("13) Inversa de una matriz\n");
-    printf("14) Mostrar Caratula\n\n");
+    printf("14) Mostrar Caratula\n");
+    printf("15) Salir\n\n");
 
-    return pedirOpcion(14);
+    return pedirOpcion(15);
 }
 int menuRetorno()
 {
@@ -404,7 +405,8 @@ int main()
         case 11: traza();
         case 12: transpuesta();
         case 13: inversa(); break;
-        default: caratula(); break;
+        case 14: caratula(); break;
+        default: goto salir; break;
     }
 
     switch (menuRetorno())
@@ -414,6 +416,7 @@ int main()
         default: break;
     }
 
+    salir:
     printf("Gracias por usar el programa!!!\n\n");
     system("pause");
 
