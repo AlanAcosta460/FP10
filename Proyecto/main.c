@@ -3,13 +3,19 @@
 #include <stdio.h> //Biblioteca estandar
 #include <stdlib.h> //Para usar la funcion system()
 
+//Caratula
+void caratula();
+
 //Operaciones con Vectores
 void sumaVec(); 
 void restaVect();
 void vecPorEscalar();
 void proEscalar();
-void proVectorial();
+void proVectorial(); 
 void proMixto();
+int pedirTam();
+void pedirVec(float [], int); 
+void mostrarVec(float [], int);
 
 //Operacions con Matrices
 void sumaMat();
@@ -19,6 +25,9 @@ void productoMat();
 void traza();
 void transpuesta();
 void inversa();
+void pedirDim();
+void pedirMat(float [][]);
+void mostrarMat(float [][], int, int);
 
 //Menus
 int menuPrincipal();
@@ -47,7 +56,8 @@ int main()
         case 10: productoMat();
         case 11: traza();
         case 12: transpuesta();
-        default: inversa(); break;
+        case 13: inversa(); break;
+        default: caratula(); break;
     }
 
     switch (menuRetorno())
@@ -63,13 +73,142 @@ int main()
     return 0;
 }
 
+//Caratula
+void caratula()
+{
+    FILE *archivo;
+    archivo = fopen("Caratula.txt", "r");
+    //esto esta pendiente 
+    
+}
+
 //Operaciones con Vectores
-void sumaVec(); 
-void restaVect();
-void vecPorEscalar();
-void proEscalar();
-void proVectorial();
-void proMixto();
+void sumaVec()
+{
+    float vec1[100], vec2[100];
+    int tam;
+
+    printf("***************SUMA DE VECTORES***************");
+    //pidiendo datos
+    tam = pedirTam();
+    pedirVec(vec1, tam);
+    pedirVec(vec2, tam);
+
+    //el resultado se guardara en el vector 1
+    for (int i = 0; i < tam; i ++)
+        vec1[i] += vec2[i];
+    
+    //mostrando el resultado
+    mostrarVec(vec1, tam);
+}
+void restaVect()
+{
+    float vec1[100], vec2[100];
+    int tam;
+
+    printf("***************RESTA DE VECTORES***************");
+    //pidiendo datos
+    tam = pedirTam();
+    pedirVec(vec1, tam);
+    pedirVec(vec2, tam);
+    
+    printf("1. Vector 1 - Vector 2\n");
+    printf("2. Vector 2 - Vector 1\n\n");
+    
+    if (pedirOpcion(2) == 1)
+    {
+        //el resultado se guardara en el vector 1
+        for (int i = 0; i < tam; i ++)
+            vec1[i] -= vec2[i];
+    }
+    else
+    {
+        //el resultado se guardara en el vector 2
+        for (int i = 0; i < tam; i ++)
+            vec2[i] -= vec1[i];
+    }
+ 
+    //mostrando el resultado
+    mostrarVec(vec1, tam);
+}
+void vecPorEscalar()
+{
+    float vec[100], escalar;
+    int tam;
+
+    printf("***************VECTORE POR ESCALAR***************");
+    //pidiendo datos
+    pedirTam(tam);
+    pedirVec(vec, tam);
+    
+    printf(".:Escalar.:\n -> ");
+    scanf("%f", escalar);
+    
+    //multiplicacion
+    for (int i = 0; i < tam; i++)
+        vec[i] *= escalar;
+
+    //mostrando el resultado
+    mostrarVec(vec, tam);
+}
+void proEscalar()
+{
+    float vec[100], resultado = 0;
+    int tam;
+
+    printf("***************PRODUCTO ESCALAR***************");
+    //pidiendo datos
+    tam = pedirTam();
+    pedirVec(vec, tam);
+
+    //prducto escalar
+    for (int i = 0; i < tam; i ++)
+        resultado += vec[i];
+    
+    printf(".:Resultado:.\n%d", resultado);
+    printf("\n\n");
+}
+void proVectorial()
+{
+
+}
+void proMixto()
+{
+
+}
+int pedirTam()
+{
+    int tam;
+
+    do
+    {
+        printf(".:Ingrese el nu%cmero de elementos de los vectores:.\n -> ", 163); 
+        scanf("%d", &tam);
+        if (tam <= 0);
+            printf("Opcion invalida\n");
+        printf("\n");
+    } while (tam <= 0);
+    printf("\n\n");
+
+    return tam;
+}
+void pedirVec(float vec[], int tam)
+{
+    printf(".:Ingrese los valores:.");
+    for (int i = 0; i < tam; i ++)
+    {
+        printf("%s.  ", i + 1);
+        scanf("%s", &vec[i]);
+    }
+    printf("\n\n");
+}
+void mostrarVec(float vec[], int tam)
+{
+    printf("\n.:Resultado:.\n");
+    for (int i = 0; i < tam; i++)
+        printf("%s\t", vec[i]);
+    printf("\n\n");
+}
 
 //Operacions con Matrices
 void sumaMat();
@@ -99,11 +238,11 @@ int menuPrincipal()
     printf("10) Producto de matrices\n");
     printf("11) Traza de una matriz\n");
     printf("12) Transpuesta de una matriz\n");
-    printf("13) Inversa de una matriz\n\n");
+    printf("13) Inversa de una matriz\n");
+    printf("14) Mostrar Caratula\n\n");
 
-    return pedirOpcion(13);
+    return pedirOpcion(14);
 }
-
 int menuRetorno()
 {
     printf("***************MENU DE RETORNO***************\n");
@@ -113,7 +252,6 @@ int menuRetorno()
 
     return pedirOpcion(3);
 }  
-
 int pedirOpcion(int opMax)
 {
     char opChar[100];
