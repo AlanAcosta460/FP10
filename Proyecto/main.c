@@ -3,6 +3,41 @@
 #include <stdio.h> //Biblioteca estandar
 #include <stdlib.h> //Para usar la funcion system()
 
+//Menus
+int menuPrincipal()
+{
+    system("cls");
+    printf("***************MENU PRINCIPAL***************\n");
+    printf(".:Operaciones con Vectores:.\n");
+    printf("1)  Suma de vectores\n");
+    printf("2)  Resta de vectores\n");
+    printf("3)  Producto de un vector por un escalar\n");
+    printf("4)  Producto escalar\n");
+    printf("5)  Producto vectorial\n");
+    printf("6)  Producto mixto\n\n");
+    printf(".:Operaciones con Matrices:.\n");
+    printf("7)  Suma de matrices\n");
+    printf("8)  Resta de matrices\n");
+    printf("9)  Producto de una matriz por un escalar\n");
+    printf("10) Producto de matrices\n");
+    printf("11) Traza de una matriz\n");
+    printf("12) Transpuesta de una matriz\n");
+    printf("13) Inversa de una matriz\n");
+    printf("14) Mostrar Caratula\n");
+    printf("15) Salir\n\n");
+
+    return pedirOpcion(15);
+}
+int menuRetorno()
+{
+    printf("\n\n***************MENU DE RETORNO***************\n");
+    printf("1)  Repetir operacion\n");
+    printf("2)  Volver al menu principal\n");
+    printf("3)  Salir\n\n");
+
+    return pedirOpcion(3);
+}
+
 //Caratula
 void caratula()
 {
@@ -23,6 +58,24 @@ void caratula()
 }
 
 //Pedir y Mostrar Datos
+int pedirOpcion(int opMax)
+{
+    char opChar[100];
+    int op;
+
+    do
+    {
+        printf(".:Seleccione una opcion:.\n");
+        printf("-> "); gets(opChar);
+        op = atoi(opChar); //Funcion que convierte una cadena en un numero entero
+        if (op < 1 || op > opMax)
+            printf("Opcion invalida");
+        printf("\n");
+    } while (op < 1 || op > opMax);
+    system("cls");
+
+    return op;
+}
 int pedirDim()
 {
     int tam;
@@ -327,59 +380,6 @@ void transpuesta()
 void inversa()
 {
 
-}
-
-//Menus
-int menuPrincipal()
-{
-    system("cls");
-    printf("***************MENU PRINCIPAL***************\n");
-    printf(".:Operaciones con Vectores:.\n");
-    printf("1)  Suma de vectores\n");
-    printf("2)  Resta de vectores\n");
-    printf("3)  Producto de un vector por un escalar\n");
-    printf("4)  Producto escalar\n");
-    printf("5)  Producto vectorial\n");
-    printf("6)  Producto mixto\n\n");
-    printf(".:Operaciones con Matrices:.\n");
-    printf("7)  Suma de matrices\n");
-    printf("8)  Resta de matrices\n");
-    printf("9)  Producto de una matriz por un escalar\n");
-    printf("10) Producto de matrices\n");
-    printf("11) Traza de una matriz\n");
-    printf("12) Transpuesta de una matriz\n");
-    printf("13) Inversa de una matriz\n");
-    printf("14) Mostrar Caratula\n");
-    printf("15) Salir\n\n");
-
-    return pedirOpcion(15);
-}
-int menuRetorno()
-{
-    printf("\n\n***************MENU DE RETORNO***************\n");
-    printf("1)  Repetir operacion\n");
-    printf("2)  Volver al menu principal\n");
-    printf("3)  Salir\n\n");
-
-    return pedirOpcion(3);
-}  
-int pedirOpcion(int opMax)
-{
-    char opChar[100];
-    int op;
-
-    do
-    {
-        printf(".:Seleccione una opcion:.\n");
-        printf("-> "); gets(opChar);
-        op = atoi(opChar); //Funcion que convierte una cadena en un numero entero
-        if (op < 1 || op > opMax)
-            printf("Opcion invalida");
-        printf("\n");
-    } while (op < 1 || op > opMax);
-    system("cls");
-
-    return op;
 }
 
 int main()
