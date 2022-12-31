@@ -396,7 +396,7 @@ void traza()
 }
 void transpuesta()
 {
-    float mat[10][10], tp[10][10];
+    float mat[10][10];
     int fil, col;
 
     printf("***************TRANSPUESTA DE UNA MATRIZ***************\n\n");
