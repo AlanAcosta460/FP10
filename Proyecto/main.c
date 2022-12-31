@@ -4,6 +4,26 @@
 #include <stdlib.h> //Para usar la funcion system()
 
 //Menus
+int pedirOpcion(int opMax)
+{
+    char opChar[100];
+    int op;
+
+    do
+    {
+        fflush(stdin);
+        printf(".:Seleccione una opcion:.\n");
+        printf("-> "); gets(opChar);
+        op = atoi(opChar); //Funcion que convierte una cadena en un numero entero
+        if (op < 1 || op > opMax)
+            printf("Opcion invalida");
+        printf("\n");
+    } while (op < 1 || op > opMax);
+    fflush(stdin);
+    system("cls");
+
+    return op;
+}
 int menuPrincipal()
 {
     system("cls");
@@ -58,28 +78,11 @@ void caratula()
 }
 
 //Pedir y Mostrar Datos
-int pedirOpcion(int opMax)
-{
-    char opChar[100];
-    int op;
-
-    do
-    {
-        printf(".:Seleccione una opcion:.\n");
-        printf("-> "); gets(opChar);
-        op = atoi(opChar); //Funcion que convierte una cadena en un numero entero
-        if (op < 1 || op > opMax)
-            printf("Opcion invalida");
-        printf("\n");
-    } while (op < 1 || op > opMax);
-    system("cls");
-
-    return op;
-}
 int pedirDim()
 {
     int tam;
 
+    fflush(stdin);
     do
     { 
         printf("-> ");
@@ -139,7 +142,7 @@ void sumaVec()
 
     printf("***************SUMA DE VECTORES***************\n\n");
     //pidiendo datos
-    printf(".:Ingrese el nu%cmero de elementos de los vectores:.\n -> ", 163); 
+    printf(".:Ingrese el n%cmero de elementos de los vectores:.\n -> ", 163); 
     tam = pedirDim();
     printf("\n.:Vector 1:.\n");
     pedirVec(vec1, tam);
@@ -160,7 +163,7 @@ void restaVect()
 
     printf("***************RESTA DE VECTORES***************\n\n");
     //pidiendo datos
-    printf(".:Ingrese el nu%cmero de elementos de los vectores:.\n", 163); 
+    printf(".:Ingrese el n%cmero de elementos de los vectores:.\n", 163); 
     tam = pedirDim();
     printf("\n.:Vector 1:.\n");
     pedirVec(vec1, tam);
@@ -168,7 +171,7 @@ void restaVect()
     pedirVec(vec2, tam);
     
     printf("\n1. Vector 1 - Vector 2\n");
-    printf("2. Vector 2 - Vector 1");
+    printf("2. Vector 2 - Vector 1\n");
     
     if (pedirOpcion(2) == 1)
     {
@@ -194,7 +197,7 @@ void vecPorEscalar()
 
     printf("***************VECTOR POR ESCALAR***************\n\n");
     //pidiendo datos
-    printf(".:Ingrese el nu%cmero de elementos de los vectores:.\n", 163); 
+    printf(".:Ingrese el n%cmero de elementos de los vectores:.\n", 163); 
     tam = pedirDim();
     printf("\n.:Vector:.\n");
     pedirVec(vec, tam);
@@ -216,7 +219,7 @@ void proEscalar()
 
     printf("***************PRODUCTO ESCALAR***************\n\n");
     //pidiendo datos
-    printf(".:Ingrese el nu%cmero de elementos de los vectores:.\n", 163); 
+    printf(".:Ingrese el n%cmero de elementos de los vectores:.\n", 163); 
     tam = pedirDim();
     printf("\n.:Vector:.\n");
     pedirVec(vec, tam);
@@ -226,7 +229,7 @@ void proEscalar()
         resultado += vec[i];
     
     //mostrando el resultado
-    printf("\n\n.:Resultado:.\n%d", resultado);
+    printf("\n\n.:Resultado:.\n%.1f", resultado);
 }
 void proVectorial()
 {
@@ -245,9 +248,9 @@ void sumaMat()
 
     printf("***************SUMA DE MATRICES***************\n\n");
     //pidiendo datos
-    printf(".:Ingrese el nu%cmero de filas de las matrices:.\n", 163);
+    printf(".:Ingrese el n%cmero de filas de las matrices:.\n", 163);
     fil = pedirDim();
-    printf(".:Ingrese el nu%cmero de columnas de las matrices:.\n", 163);
+    printf(".:Ingrese el n%cmero de columnas de las matrices:.\n", 163);
     col = pedirDim();
     printf("\n.:Matriz 1:.\n");
     pedirMat(mat1, fil, col);
@@ -271,9 +274,9 @@ void restaMat()
 
     printf("***************RESTA DE MATRICES***************\n\n");
     //pidiendo datos
-    printf(".:Ingrese el nu%cmero de filas de las matrices:.\n", 163);
+    printf(".:Ingrese el n%cmero de filas de las matrices:.\n", 163);
     fil = pedirDim();
-    printf(".:Ingrese el nu%cmero de columnas de las matrices:.\n", 163);
+    printf(".:Ingrese el n%cmero de columnas de las matrices:.\n", 163);
     col = pedirDim();
     printf("\n.:Matriz 1:.\n");
     pedirMat(mat1, fil, col);
@@ -313,9 +316,9 @@ void matPorEscalar()
 
     printf("***************MATRIZ POR ESCALAR***************\n\n");
     //pidiendo datos
-    printf(".:Ingrese el nu%cmero de filas de la matriz:.\n", 163);
+    printf(".:Ingrese el n%cmero de filas de la matriz:.\n", 163);
     fil = pedirDim();
-    printf(".:Ingrese el nu%cmero de columnas de la matriz:.\n", 163);
+    printf(".:Ingrese el n%cmero de columnas de la matriz:.\n", 163);
     col = pedirDim();
     printf("\n.:Matriz:.\n");
     pedirMat(mat, fil, col);
@@ -341,13 +344,13 @@ void productoMat()
     //pidiendo datos
     do
     {    
-        printf(".:Ingrese el nu%cmero de filas de la matriz 1:.\n", 163);
+        printf(".:Ingrese el n%cmero de filas de la matriz 1:.\n", 163);
         fil1 = pedirDim();
-        printf(".:Ingrese el nu%cmero de columnas de la matriz 1:.\n", 163);
+        printf(".:Ingrese el n%cmero de columnas de la matriz 1:.\n", 163);
         col1 = pedirDim();
-        printf("\n.:Ingrese el nu%cmero de filas de la matriz 2:.\n", 163);
+        printf("\n.:Ingrese el n%cmero de filas de la matriz 2:.\n", 163);
         fil2 = pedirDim();
-        printf(".:Ingrese el nu%cmero de columnas de la matriz 2:.\n", 163);
+        printf(".:Ingrese el n%cmero de columnas de la matriz 2:.\n", 163);
         col2 = pedirDim();
         if (col1 != fil2)
             printf("\nEl no. de columnas de la matriz 1 debe ser igual al no. de filas de la matriz 2\n");
@@ -371,11 +374,48 @@ void productoMat()
 }
 void traza()
 {
+    float mat[10][10], traza = 0;
+    int tam;
 
+    printf("***************TRAZA DE UNA MATRIZ CUADRADA***************\n\n");
+    printf(".:Ingrese el n%cmero de filas y columnas de la matriz cuadrada:.\n", 163);
+    tam = pedirDim();
+    printf("\n.:Matriz:.\n");
+    pedirMat(mat, tam, tam);
+
+    for (int i = 0; i < tam; i ++)
+    {
+        for (int j = 0; j < tam; j ++)
+        {
+            if (i == j)
+                traza += mat[i][j];
+        }
+    }
+
+    printf("\n\n.:Resultado:.\n%.1f", traza);
 }
 void transpuesta()
 {
+    float mat[10][10], tp[10][10];
+    int fil, col;
 
+    printf("***************TRANSPUESTA DE UNA MATRIZ***************\n\n");
+    printf(".:Ingrese el n%cmero de filas de la matriz:.\n", 163);
+    fil = pedirDim();
+    printf(".:Ingrese el n%cmero de columnas de la matriz:.\n", 163);
+    col = pedirDim();
+    printf("\n.:Matriz:.\n");
+    pedirMat(mat, fil, col);
+
+    printf("\n\n.:Resultado:.\n");
+    for (int i = 0; i < col; i++)
+    {
+        for (int j = 0; j < fil; j ++)
+        {
+            printf("%.1f\t", mat[j][i]);
+        }
+        printf("\n");
+    }
 }
 void inversa()
 {
@@ -392,18 +432,18 @@ int main()
     seleccion:
     switch (opcion)
     {
-        case 1: sumaVec();
-        case 2: restaVect();
-        case 3: vecPorEscalar();
-        case 4: proEscalar();
-        case 5: proVectorial();
-        case 6: proMixto();
-        case 7: sumaMat();
-        case 8: restaMat();
-        case 9: matPorEscalar();
-        case 10: productoMat();
-        case 11: traza();
-        case 12: transpuesta();
+        case 1: sumaVec(); break;
+        case 2: restaVect(); break;
+        case 3: vecPorEscalar(); break;
+        case 4: proEscalar(); break;
+        case 5: proVectorial(); break;
+        case 6: proMixto(); break;
+        case 7: sumaMat(); break;
+        case 8: restaMat(); break;
+        case 9: matPorEscalar(); break;
+        case 10: productoMat(); break;
+        case 11: traza(); break;
+        case 12: transpuesta(); break;
         case 13: inversa(); break;
         case 14: caratula(); break;
         default: goto salir; break;
