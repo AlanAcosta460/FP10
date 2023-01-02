@@ -25,7 +25,7 @@ int pedirOpcion(int opMax)
 }
 int menuPrincipal()
 {
-    system("pause");
+    system("cls");
     printf("***************MENU PRINCIPAL***************\n");
     printf(".:Operaciones con Vectores:.\n");
     printf("1)  Suma de vectores\n");
@@ -516,7 +516,7 @@ void inversa()
     {
         for (int j = 0; j < tam; j++)
         {
-            printf("%.2f\t", inv[i][j] / det);
+            printf("%.1f\t", inv[j][i] / det);
         }
         printf("\n");
     }   
