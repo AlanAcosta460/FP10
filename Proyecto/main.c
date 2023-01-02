@@ -4,6 +4,9 @@
 #include <stdlib.h> //Para usar la funcion system()
 #include <math.h>
 
+//variables globales
+int i, j;
+
 //Menus
 int pedirOpcion(int opMax)
 {
@@ -80,7 +83,7 @@ void caratula()
 void pedirVec(float vec[], int tam)
 {
     printf(".:Ingrese los valores:.\n");
-    for (int i = 0; i < tam; i ++)
+    for (i = 0; i < tam; i ++)
     {
         printf("%d: ", i + 1);
         scanf("%f", &vec[i]);
@@ -89,16 +92,16 @@ void pedirVec(float vec[], int tam)
 void mostrarVec(float vec[], int tam)
 {
     printf("\n.:Resultado:.\n");
-    for (int i = 0; i < tam; i++)
+    for (i = 0; i < tam; i++)
         printf("%.1f\t", vec[i]);
     printf("\n");
 }
 void pedirMat(float mat[][10], int fil, int col)
 {
     printf(".:Ingrese los valores:.\n");
-    for (int i = 0; i < fil; i ++)
+    for (i = 0; i < fil; i ++)
     {
-        for (int j = 0; j < col; j ++)
+        for (j = 0; j < col; j ++)
         {
             printf("[%d][%d]: ", i + 1, j + 1);
             scanf("%f", &mat[i][j]);
@@ -109,12 +112,10 @@ void pedirMat(float mat[][10], int fil, int col)
 void mostrarMat(float mat[][10], int fil, int col)
 {
     printf(".:Resultado:.\n");
-    for (int i = 0; i < fil; i++)
+    for (i = 0; i < fil; i++)
     {
-        for (int j = 0; j < col; j ++)
-        {
+        for (j = 0; j < col; j ++)
             printf("%.1f\t", mat[i][j]);
-        }
         printf("\n");
     }
 }
@@ -135,7 +136,7 @@ void sumaVec()
     pedirVec(vec2, tam);
 
     //el resultado se guardara en el vector 1
-    for (int i = 0; i < tam; i ++)
+    for (i = 0; i < tam; i ++)
         vec1[i] += vec2[i];
     
     //mostrando el resultado
@@ -162,7 +163,7 @@ void restaVect()
     if (pedirOpcion(2) == 1)
     {
         //el resultado se guardara en el vector 1
-        for (int i = 0; i < tam; i ++)
+        for (i = 0; i < tam; i ++)
             vec1[i] -= vec2[i];
         //mostrando el resultado
         mostrarVec(vec1, tam);
@@ -170,7 +171,7 @@ void restaVect()
     else
     {
         //el resultado se guardara en el vector 2
-        for (int i = 0; i < tam; i ++)
+        for (i = 0; i < tam; i ++)
             vec2[i] -= vec1[i];
         //mostrando el resultado
         mostrarVec(vec2, tam);
@@ -192,7 +193,7 @@ void vecPorEscalar()
     scanf("%f", &escalar);
     
     //multiplicacion
-    for (int i = 0; i < tam; i++)
+    for (i = 0; i < tam; i++)
         vec[i] *= escalar;
 
     //mostrando el resultado
@@ -213,7 +214,7 @@ void proEscalar()
     pedirVec(vec2, tam);
 
     //prducto escalar
-    for (int i = 0; i < tam; i ++)
+    for (i = 0; i < tam; i ++)
         resultado += vec1[i] * vec2[i];
     
     //mostrando el resultado
@@ -257,7 +258,7 @@ void proMixto()
     vecAux[2] = (vec2[0] * vec3[1]) - (vec2[1] * vec3[0]);
     
     //producto escalar
-    for (int i = 0; i < 3; i ++)
+    for (i = 0; i < 3; i ++)
         resultado += vec1[i] * vecAux[i];
     
     //mostrando el resultado
@@ -282,9 +283,9 @@ void sumaMat()
     pedirMat(mat2, fil, col);
 
     //el resultado de la suma se guarda en la matriz 1
-    for (int i = 0; i < fil; i ++)
+    for (i = 0; i < fil; i ++)
     {
-        for (int j = 0; j < col; j ++)
+        for (j = 0; j < col; j ++)
             mat1[i][j] += mat2[i][j];
     }
 
@@ -314,9 +315,9 @@ void restaMat()
     if (pedirOpcion(2) == 1)
     {
         //el resultado se guardara en la matriz 1
-        for (int i = 0; i < fil; i ++)
+        for (i = 0; i < fil; i ++)
         {
-            for (int j = 0; i < col; i ++)
+            for (j = 0; i < col; i ++)
                 mat1[i][j] -= mat2[i][j];
         }  
         //mostrando el resultado
@@ -325,9 +326,9 @@ void restaMat()
     else
     {
         //el resultado se guardara en la matriz 2
-        for (int i = 0; i < fil; i ++)
+        for (i = 0; i < fil; i ++)
         {
-            for (int j = 0; i < col; i ++)
+            for (j = 0; i < col; i ++)
                 mat2[i][j] -= mat1[i][j];
         }  
         //mostrando el resultado
@@ -351,9 +352,9 @@ void matPorEscalar()
     scanf("%f", &escalar);
     
     //multiplicacion
-    for (int i = 0; i < fil; i ++)
+    for (i = 0; i < fil; i ++)
     {
-        for (int j = 0; j < col; j ++)
+        for (j = 0; j < col; j ++)
             mat[i][j] *= escalar;
     }
 
@@ -388,9 +389,9 @@ void productoMat()
     pedirMat(mat2, fil2, col2);
 
     // el resultado se guardara en matRes
-    for (int i = 0; i < fil1; i++)
+    for (i = 0; i < fil1; i++)
     {
-        for (int j = 0; i < col2; i++)
+        for (j = 0; i < col2; i++)
             matRes[i][j] = mat1[i][j] * mat2[j][i];
     }
 
@@ -408,9 +409,9 @@ void traza()
     printf(".:Matriz:.\n");
     pedirMat(mat, tam, tam);
 
-    for (int i = 0; i < tam; i ++)
+    for (i = 0; i < tam; i ++)
     {
-        for (int j = 0; j < tam; j ++)
+        for (j = 0; j < tam; j ++)
         {
             if (i == j)
                 traza += mat[i][j];
@@ -433,12 +434,10 @@ void transpuesta()
     pedirMat(mat, fil, col);
 
     printf("\n.:Resultado:.\n");
-    for (int i = 0; i < col; i++)
+    for (i = 0; i < col; i++)
     {
-        for (int j = 0; j < fil; j ++)
-        {
+        for (j = 0; j < fil; j ++)
             printf("%.1f\t", mat[j][i]);
-        }
         printf("\n");
     }
 }
@@ -446,9 +445,10 @@ void transpuesta()
 void minor(float mat[][10], int tam, int fil, int col, float m[][10])
 {
     int r = 0, c = 0;
-    for (int i = 0; i < tam; i++)
+
+    for (i = 0; i < tam; i++)
     {
-        for (int j = 0; j < tam; j++)
+        for (j = 0; j < tam; j++)
         {
             if (i != fil && j != col)
             {
@@ -466,18 +466,18 @@ void minor(float mat[][10], int tam, int fil, int col, float m[][10])
 float determinante(float mat[][10], int tam)
 {
     if (tam == 2)
-    {
         return mat[0][0] * mat[1][1] - mat[0][1] * mat[1][0];
-    }
     else
     {
         float det = 0;
-        for (int i = 0; i < tam; i++)
+
+        for (i = 0; i < tam; i++)
         {
             float m[10][10];
             minor(mat, tam, 0, i, m);
             det += pow(-1, i) * mat[0][i] * determinante(m, tam - 1);
         }
+        
         return det;
     }
 }
@@ -501,9 +501,9 @@ void inversa()
     }
 
     // Calcular la matriz adjunta y multiplicarla por el inverso del determinante
-    for (int i = 0; i < tam; i++)
+    for (i = 0; i < tam; i++)
     {
-        for (int j = 0; j < tam; j++)
+        for (j = 0; j < tam; j++)
         {
             float m[10][10];
             minor(mat, tam, i, j, m);
@@ -512,12 +512,10 @@ void inversa()
     }
     // Mostrar la matriz inversa
     printf("\n.:Matriz inversa:.\n");
-    for (int i = 0; i < tam; i++)
+    for (i = 0; i < tam; i++)
     {
-        for (int j = 0; j < tam; j++)
-        {
+        for (j = 0; j < tam; j++)
             printf("%.1f\t", inv[j][i] / det);
-        }
         printf("\n");
     }   
 }
