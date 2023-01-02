@@ -14,7 +14,7 @@ int pedirOpcion(int opMax)
     { 
         printf("-> "); scanf("%d", &op);
         if (op < 1)
-            printf("Opcion invalida");
+            printf("Opcion invalida\n");
         else if (op > opMax)
             printf("Opcion invalida. El maximo es %d\n", opMax);
         printf("\n");
