@@ -125,7 +125,6 @@ void sumaVec()
     float vec1[100], vec2[100];
     int tam;
 
-    system("cls");
     printf("***************SUMA DE VECTORES***************\n\n");
     //pidiendo datos
     printf(".:Ingrese el numero de elementos de los vectores:.\n"); 
@@ -147,7 +146,6 @@ void restaVect()
     float vec1[100], vec2[100];
     int tam;
 
-    system("cls");
     printf("***************RESTA DE VECTORES***************\n\n");
     //pidiendo datos
     printf(".:Ingrese el numero de elementos de los vectores:.\n"); 
@@ -183,7 +181,6 @@ void vecPorEscalar()
     float vec[100], escalar;
     int tam;
 
-    system("cls");
     printf("***************VECTOR POR ESCALAR***************\n\n");
     //pidiendo datos
     printf(".:Ingrese el numero de elementos de del vector:.\n"); 
@@ -206,7 +203,6 @@ void proEscalar()
     float vec1[100], vec2[100], resultado = 0;
     int tam;
 
-    system("cls");
     printf("***************PRODUCTO ESCALAR***************\n\n");
     //pidiendo datos
     printf(".:Ingrese el numero de elementos de los vectores:.\n"); 
@@ -227,7 +223,6 @@ void proVectorial()
 {
     float vec1[3], vec2[3], vecRes[3];
 
-    system("cls");
     printf("***************PRODUCTO VECTORIAL EN TRES DIMENSIONES***************\n\n");
     //pidiendo datos
     printf(".:Vector 1:.\n");
@@ -247,7 +242,6 @@ void proMixto()
 {
     float vec1[3], vec2[3], vec3[3], vecAux[3], resultado = 0;
 
-    system("cls");
     printf("***************PRODUCTO MIXTO EN TRES DIMENSIONES***************\n\n");
     //pidiendo datos
     printf(".:Vector 1:.\n");
@@ -276,7 +270,6 @@ void sumaMat()
     float mat1[10][10], mat2[10][10];
     int fil, col;
 
-    system("cls");
     printf("***************SUMA DE MATRICES***************\n\n");
     //pidiendo datos
     printf(".:Ingrese el numero de filas de las matrices:.\n");
@@ -303,7 +296,6 @@ void restaMat()
     float mat1[10][10], mat2[10][10];
     int fil, col;
 
-    system("cls");
     printf("***************RESTA DE MATRICES***************\n\n");
     //pidiendo datos
     printf(".:Ingrese el numero de filas de las matrices:.\n");
@@ -347,7 +339,6 @@ void matPorEscalar()
     float mat[10][10], escalar;
     int fil, col;
 
-    system("cls");
     printf("***************MATRIZ POR ESCALAR***************\n\n");
     //pidiendo datos
     printf(".:Ingrese el numero de filas de la matriz:.\n");
@@ -374,7 +365,6 @@ void productoMat()
     float mat1[10][10], mat2[10][10], matRes[10][10];
     int fil1, col1, fil2, col2;
 
-    system("cls");
     printf("***************PRODUCTO DE MATRICES***************\n\n");
     //pidiendo datos
     do
@@ -412,7 +402,6 @@ void traza()
     float mat[10][10], traza = 0;
     int tam;
 
-    system("cls");
     printf("***************TRAZA DE UNA MATRIZ CUADRADA***************\n\n");
     printf(".:Ingrese el numero de filas y columnas de la matriz cuadrada:.\n");
     tam = pedirOpcion(10);
@@ -435,7 +424,6 @@ void transpuesta()
     float mat[10][10];
     int fil, col;
 
-    system("cls");
     printf("***************TRANSPUESTA DE UNA MATRIZ***************\n\n");
     printf(".:Ingrese el numero de filas de la matriz:.\n");
     fil = pedirOpcion(10);
@@ -478,7 +466,6 @@ void inversa()
     float mat[10][10], det;
     int tam;
 
-    system("cls");
     printf("***************INVERSA DE UNA MATRIZ CUADRADA***************\n\n");
     printf(".:Ingrese el numero de filas y columnas de la matriz cuadrada:.\n");
     tam = pedirOpcion(10);
@@ -496,6 +483,7 @@ int main()
     opcion = menuPrincipal();
 
     seleccion:
+    system("cls");
     switch (opcion)
     {
         case 1: sumaVec(); break;
