@@ -25,7 +25,7 @@ int pedirOpcion(int opMax)
 }
 int menuPrincipal()
 {
-    system("cls");
+    system("pause");
     printf("***************MENU PRINCIPAL***************\n");
     printf(".:Operaciones con Vectores:.\n");
     printf("1)  Suma de vectores\n");
@@ -442,28 +442,49 @@ void transpuesta()
         printf("\n");
     }
 }
-//funcion recursiva para sacar el determinante
-float determinante(float mat[10][10], int tam)
+
+void minor(float mat[][10], int tam, int fil, int col, float m[][10])
 {
-    float det = 0;
+    int r = 0, c = 0;
+    for (int i = 0; i < tam; i++)
+    {
+        for (int j = 0; j < tam; j++)
+        {
+            if (i != fil && j != col)
+            {
+                m[r][c] = mat[i][j];
+                c++;
+                if (c == tam - 1)
+                {
+                    r++;
+                    c = 0;
+                }
+            }
+        }
+    }
+}
+float determinante(float mat[][10], int tam)
+{
     if (tam == 2)
     {
-        det = mat[0][0] * mat[1][1] - mat[0][1] * mat[1][0];
+        return mat[0][0] * mat[1][1] - mat[0][1] * mat[1][0];
     }
     else
     {
-        for (int i = 0; i < tam; i ++)
+        float det = 0;
+        for (int i = 0; i < tam; i++)
         {
-            det += pow(- 1, i) * mat[0][i] * determinante(mat, tam - 1);
+            float m[10][10];
+            minor(mat, tam, 0, i, m);
+            det += pow(-1, i) * mat[0][i] * determinante(m, tam - 1);
         }
+        return det;
     }
-
-    return det;
 }
 void inversa()
 {
     //inversa de una matriz cuadrada
-    float mat[10][10], det;
+    float mat[10][10], det, inv[10][10];
     int tam;
 
     printf("***************INVERSA DE UNA MATRIZ CUADRADA***************\n\n");
@@ -472,7 +493,33 @@ void inversa()
     printf(".:Matriz:.\n");
     pedirMat(mat, tam, tam);
 
-    
+    det = determinante(mat, tam);
+    if (det == 0)
+    {
+        printf("La matriz no tiene inversa\n");
+        return;
+    }
+
+    // Calcular la matriz adjunta y multiplicarla por el inverso del determinante
+    for (int i = 0; i < tam; i++)
+    {
+        for (int j = 0; j < tam; j++)
+        {
+            float m[10][10];
+            minor(mat, tam, i, j, m);
+            inv[i][j] = pow(-1, i + j) * determinante(m, tam - 1);
+        }
+    }
+    // Mostrar la matriz inversa
+    printf("\n.:Matriz inversa:.\n");
+    for (int i = 0; i < tam; i++)
+    {
+        for (int j = 0; j < tam; j++)
+        {
+            printf("%.2f\t", inv[i][j] / det);
+        }
+        printf("\n");
+    }   
 }
 
 int main()
