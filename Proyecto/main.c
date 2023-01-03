@@ -317,7 +317,7 @@ void restaMat()
         //el resultado se guardara en la matriz 1
         for (i = 0; i < fil; i ++)
         {
-            for (j = 0; i < col; i ++)
+            for (j = 0; j < col; j ++)
                 mat1[i][j] -= mat2[i][j];
         }  
         //mostrando el resultado
@@ -328,7 +328,7 @@ void restaMat()
         //el resultado se guardara en la matriz 2
         for (i = 0; i < fil; i ++)
         {
-            for (j = 0; i < col; i ++)
+            for (j = 0; j < col; j ++)
                 mat2[i][j] -= mat1[i][j];
         }  
         //mostrando el resultado
