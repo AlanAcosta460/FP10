@@ -232,7 +232,7 @@ void proVectorial()
     pedirVec(vec2, 3);
 
     //prducto vectorial
-    vecRes[0] = (vec1[1] * vec2[2]) - (vec1[2] * vec1[1]);
+    vecRes[0] = (vec1[1] * vec2[2]) - (vec1[2] * vec2[1]);
     vecRes[1] = (- 1) * ((vec1[0] * vec2[2]) - (vec1[2] * vec2[0]));
     vecRes[2] = (vec1[0] * vec2[1]) - (vec1[1] * vec2[0]);
     
