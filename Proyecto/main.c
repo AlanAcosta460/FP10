@@ -389,9 +389,9 @@ void productoMat()
     pedirMat(mat2, fil2, col2);
 
     // el resultado se guardara en matRes
-    for (i = 0; i < fil1; i++)
+    for (i = 0; i < fil1; i ++)
     {
-        for (j = 0; j < col2; j++)
+        for (j = 0; j < col2; j ++)
         {
             matRes[i][j] = 0;
             for (k = 0; k < col1; k ++)
