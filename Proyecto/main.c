@@ -396,8 +396,7 @@ void productoMat()
             matRes[i][j] = 0;
             for (k = 0; k < col1; k ++)
                 matRes[i][j] += mat1[i][k] * mat2[k][j];
-        }
-            
+        }  
     }
 
     // mostrando el resultado
