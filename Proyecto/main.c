@@ -253,7 +253,7 @@ void proMixto()
     pedirVec(vec3, 3);
 
     //prducto vectorial
-    vecAux[0] = (vec2[1] * vec2[2]) - (vec2[2] * vec3[1]);
+    vecAux[0] = (vec2[1] * vec3[2]) - (vec2[2] * vec3[1]);
     vecAux[1] = (- 1) * ((vec2[0] * vec3[2]) - (vec2[2] * vec3[0]));
     vecAux[2] = (vec2[0] * vec3[1]) - (vec2[1] * vec3[0]);
     
