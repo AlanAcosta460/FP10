@@ -364,7 +364,7 @@ void matPorEscalar()
 void productoMat()
 {
     float mat1[10][10], mat2[10][10], matRes[10][10];
-    int fil1, col1, fil2, col2;
+    int fil1, col1, fil2, col2, k;
 
     printf("***************PRODUCTO DE MATRICES***************\n\n");
     //pidiendo datos
@@ -391,8 +391,13 @@ void productoMat()
     // el resultado se guardara en matRes
     for (i = 0; i < fil1; i++)
     {
-        for (j = 0; i < col2; i++)
-            matRes[i][j] = mat1[i][j] * mat2[j][i];
+        for (j = 0; j < col2; j++)
+        {
+            matRes[i][j] = 0;
+            for (k = 0; k < col1; k ++)
+                matRes[i][j] += mat1[i][k] * mat2[k][j];
+        }
+            
     }
 
     // mostrando el resultado
