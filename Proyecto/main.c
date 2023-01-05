@@ -2,7 +2,7 @@
 
 #include <stdio.h> //Biblioteca estandar
 #include <stdlib.h> //Para usar la funcion system()
-#include <math.h>
+#include <math.h> //Para usar la funcion pow()
 
 //variables globales
 int i, j;
