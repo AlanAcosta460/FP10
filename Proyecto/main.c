@@ -428,18 +428,17 @@ void inversa() //Solo se sacara la inversa de una matriz 2x2
 
     determinante = (mat[0][0] * mat[1][1]) - (mat[0][1] * mat[1][0]); //Calculando el determinante de la matriz
     if (determinante == 0) //Si el determinante es 0, la matriz no tiene inversa
-    {
         printf("La matriz no tiene inversa\n");
-        return;
-    }
-    
-    //Calculando la inversa de la matriz
-    inv[0][0] = mat[1][1] / determinante;
-    inv[0][1] = -mat[0][1] / determinante;
-    inv[1][0] = -mat[1][0] / determinante;
-    inv[1][1] = mat[0][0] / determinante;
+    else
+    {
+        //Calculando la inversa de la matriz
+        inv[0][0] = mat[1][1] / determinante;
+        inv[0][1] = -mat[0][1] / determinante;
+        inv[1][0] = -mat[1][0] / determinante;
+        inv[1][1] = mat[0][0] / determinante;
 
-    mostrarMat(inv, 2, 2); //Imprimiendo el resultado
+        mostrarMat(inv, 2, 2); //Imprimiendo el resultado
+    }
 }
 
 int main()
